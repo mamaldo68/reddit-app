@@ -1,10 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import mockData from "../../mockData";
 
-
-export const loadPosts = createAsyncThunk("posts/loadPosts", async () => {
+export const loadPosts = createAsyncThunk("posts/loadPosts", async (subreddit) => {
     try {
-        const response = await fetch("https://www.reddit.com/r/MEOW_IRL/new/.json");
+        const response = await fetch(`https://www.reddit.com/r/${subreddit}/new/.json`);
 
         if(!response) {
             throw new Error(`HTTP error Status: ${response.status}`);

@@ -6,7 +6,7 @@ const Post = ({post}) => {
     return (
         <div>
             <p>{post.data.title}</p>
-            <img src={post.data.url} width={250} height={250}></img>
+            {post.data.post_hint === "image" && <img src={post.data.url} width={250} height={250}></img>}
             <p>By: {post.data.author} on r/{post.data.subreddit}</p>
             <p>score: {post.data.score} | comments: {post.data.num_comments} | {date.toUTCString()}</p>
             <br/>

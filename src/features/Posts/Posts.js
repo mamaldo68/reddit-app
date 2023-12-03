@@ -5,10 +5,10 @@ import Post from "./Post";
 
 const Posts = () => {
     const posts = useSelector(selectPosts);
-    console.log(posts);
     return (
         <div>
             {posts && posts.map(post => <Post post={post}/>)}
+            {!posts && <p>can't find that subreddit</p>}
         </div>
     );
 };

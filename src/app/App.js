@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
 import Posts from "../features/Posts/Posts";
-import { loadPosts } from '../features/Posts/postsSlice';
-import { useDispatch } from 'react-redux';
+import SearchBar from '../SearchBar/SearchBar';
 
 function App() {
-  const dispacth = useDispatch();
   return (
     <div className="App">
+      <SearchBar/>
       <Posts/>
-      <button type="button" onClick={() => dispacth(loadPosts())}> click me </button>
     </div>
   );
 }
