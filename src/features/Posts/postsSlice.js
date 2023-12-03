@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const loadPosts = createAsyncThunk("posts/loadPosts", async (subreddit) => {
+export const loadPosts = createAsyncThunk("posts/loadPosts", async ({ subreddit, sortType }) => {
+    
     try {
-        const response = await fetch(`https://www.reddit.com/r/${subreddit}/new/.json`);
+        const response = await fetch(`https://www.reddit.com/r/${subreddit}/${sortType}/.json`);
 
         if(!response) {
             throw new Error(`HTTP error Status: ${response.status}`);

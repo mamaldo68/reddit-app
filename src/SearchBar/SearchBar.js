@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { loadPosts } from "../features/Posts/postsSlice";
-import { useDispatch } from "react-redux";
+import { addSubreddit, selectSubreddit, selectSortType } from "../features/Subreddit/subredditSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const SearchBar = () => {
     const [search, setSearch] = useState("");
     const dispatch = useDispatch();
+    const sortType = useSelector(selectSortType);
+   
 
     const changeHandler = ({ target }) => {
         setSearch(target.value);
@@ -12,7 +15,8 @@ const SearchBar = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        dispatch(loadPosts(search));
+        dispatch(addSubreddit(search));
+        dispatch(loadPosts({subreddit: search, sortType: sortType}));
     };
 
     return (
