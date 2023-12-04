@@ -19,7 +19,7 @@ const SearchBar = () => {
         event.preventDefault();
         dispatch(addSubreddit(search));
         dispatch(loadPosts({subreddit: search, sortType: sortType}));
-        navigate(search);
+        navigate(`${search}/${sortType}`);
     };
 
     return (
