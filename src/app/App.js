@@ -6,7 +6,7 @@ import Subreddit from '../features/Subreddit/Subreddit';
 
 const appRouter = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Root/>}>
-    <Route path=":subreddit/:sortType" element={<Subreddit/>}/>
+    <Route path="r/:subreddit/:sortType" element={<Subreddit/>}/>
   </Route>
 ));
 

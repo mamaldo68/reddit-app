@@ -17,7 +17,7 @@ const Subreddit = () => {
         if (sortType !== target.value) {
             dispatch(addSortType(target.value));
             dispatch(loadPosts({subreddit: subreddit, sortType: target.value}));
-            navigate(`/${subreddit}/${target.value}`);
+            navigate(`/r/${subreddit}/${target.value}`);
         }
     };
 
