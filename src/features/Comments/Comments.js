@@ -9,6 +9,7 @@ const Comments = () => {
     return (
         <div>
             <Contents/>
+            <p><strong>Comments</strong></p>
             {comments && comments.map(comment => <Comment comment={comment}/>)}
         </div>
     );

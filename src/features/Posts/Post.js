@@ -17,7 +17,7 @@ const Post = ({post}) => {
     return (
         <div>
             <p>{post.data.title}</p>
-            {post.data.post_hint === "image" && <img src={post.data.url} width={250} height={250}></img>}
+            {post.data.thumbnail !== "self" && post.data.thumbnail !== "spoiler" && <img src={post.data.thumbnail}></img>}
             <p>By: {post.data.author} on r/{post.data.subreddit}</p>
             <p>score: {post.data.score} | <span onClick={() => clickHandler(post.data)}>comments: {post.data.num_comments}</span> | {date.toUTCString()}</p>
             <br/>
