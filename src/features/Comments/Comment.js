@@ -3,7 +3,7 @@ import React from "react";
 const Comment = ({comment}) => {
     const { author, body, replies, depth } = comment.data;
     const commentStyle = {
-        marginLeft: depth > 0 ? `${depth * 20}px` : "0",
+        marginLeft: depth > 0 ? `25px` : "0",
         borderLeft: depth > 0 ? "1px solid #ccc" : "none",
         padding: depth > 0 ? "5px" : "0",
     };
