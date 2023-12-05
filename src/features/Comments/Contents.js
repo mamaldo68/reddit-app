@@ -1,13 +1,10 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+import MarkdownRenderer from "../../MarkdownRenderer/MarkDownRenderer";
 import { useSelector } from "react-redux";
 import { selectContents } from "./commentsSlice";
 
 const Contents = () => {
     const contents = useSelector(selectContents);
-    const formattedText = (rawText) => {
-        return <ReactMarkdown>{rawText}</ReactMarkdown>;
-    };
     
     if (contents && contents.data) {
         const { title, author, url, selftext, thumbnail} = contents.data;
@@ -16,7 +13,7 @@ const Contents = () => {
                 <p>{title}</p>
                 <p>Submitted by: {author}</p>
                 {url && thumbnail !== "self" && <img src={url}/>}
-                {selftext && <p>{formattedText(selftext)}</p>}
+                {selftext && <MarkdownRenderer markdownContent={selftext}/>}
             </div>
         );
     }
