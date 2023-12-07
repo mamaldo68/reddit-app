@@ -31,6 +31,7 @@ const Subreddit = () => {
 
     return (
         <div>
+            {subreddit && <h2>r/{subreddit}</h2>}
             {sortBar}
             <Posts/>
         </div>
