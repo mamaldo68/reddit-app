@@ -2,17 +2,21 @@ import React from "react";
 import MarkdownRenderer from "../../MarkdownRenderer/MarkDownRenderer";
 import { useSelector } from "react-redux";
 import { selectContents } from "./commentsSlice";
+import MediaDisplayer from "../../MediaDisplay/MediaDisplayer";
+import { getMediaContent } from "../../util/mediaHelperFunctions";
+
 
 const Contents = () => {
     const contents = useSelector(selectContents);
     
     if (contents && contents.data) {
-        const { title, author, url, selftext, thumbnail, domain } = contents.data;
+        const mediaContent = getMediaContent(contents);
+        const { title, author, selftext } = contents.data;
         return (
             <div>
                 <p>{title}</p>
                 <p>Submitted by: {author}</p>
-                {url && thumbnail !== "self" && <img src={domain === "imgur.com" ? url + ".png" : url}/>}
+                <MediaDisplayer mediaContent={mediaContent} />
                 {selftext && <MarkdownRenderer markdownContent={selftext}/>}
             </div>
         );

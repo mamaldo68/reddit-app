@@ -46,9 +46,12 @@ export const getMediaContent = (post) => {
         case "video":
             mediaContent["width"] = post.data.secure_media.reddit_video.width;
             mediaContent["height"] = post.data.secure_media.reddit_video.height;
-            mediaContent["src"] = post.data.secure_media.reddit_video.fallback_url;
+            mediaContent["src"] = decodeUrl(post.data.secure_media.reddit_video.fallback_url);
             return mediaContent;
         case "youtube":
+            mediaContent["width"] = post.data.secure_media_embed.width;
+            mediaContent["height"] = post.data.secure_media_embed.height;
+            mediaContent["src"] = post.data.secure_media_embed.media_domain_url;
             return mediaContent;
         case "img":
             const getResolutions = post.data.preview.images[0].resolutions;

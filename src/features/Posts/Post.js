@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadComments } from "../Comments/commentsSlice";
+import { decodeUrl } from "../../util/mediaHelperFunctions";
 
 const Post = ({post}) => {
     const utcTime = post.data.created_utc;
@@ -17,7 +18,7 @@ const Post = ({post}) => {
     return (
         <div>
             <p>{post.data.title}</p>
-            {post.data.thumbnail !== "self" && post.data.thumbnail !== "spoiler" && <img src={post.data.thumbnail}></img>}
+            {post.data.thumbnail !== "self" && post.data.thumbnail !== "spoiler" && <img src={decodeUrl(post.data.thumbnail)}></img>}
             <p>By: {post.data.author} on r/{post.data.subreddit}</p>
             <p>score: {post.data.score} | <span onClick={() => clickHandler(post.data)}>comments: {post.data.num_comments}</span> | {date.toUTCString()}</p>
             <br/>
