@@ -66,3 +66,11 @@
 .subreddit:hover {
     color: #ff6314;
 }
+
+.nsfw {
+    filter: blur(5px);
+}
+
+.otherThumbnails {
+    width: 100%;
+}

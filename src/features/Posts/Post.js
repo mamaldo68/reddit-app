@@ -27,10 +27,41 @@ const Post = ({ post, counter }) => {
         event.stopPropagation();
     };
 
+    const getThumbnail = (object) => {
+        switch(object.data.thumbnail) {
+            case "nsfw":
+                const getResolutions = object.data.preview.images[0].resolutions;
+                const getImg = getResolutions[0];
+                return (
+                    <div className={`${styles.thumbnail}`}>
+                        <img className={`${styles.thumbnail} ${styles.nsfw}`} src={decodeUrl(getImg.url)} width={getImg.width} height={getImg.height}/>
+                    </div>
+                );
+            case "spoiler":
+                return (
+                    <div className={`${styles.thumbnail}`}>
+                        <img className = {styles.otherThumbnails} src="/images/spoilerPost.png"/>
+                    </div>
+                );
+            case "self":
+                return (
+                    <div className={`${styles.thumbnail}`}>
+                        <img className = {styles.otherThumbnails} src="/images/textPost.png"/>
+                    </div>
+                );
+            default:
+                return (
+                    <div className={`${styles.thumbnail}`}>
+                        <img src={decodeUrl(object.data.thumbnail)}/>
+                    </div>
+                );
+        }
+    };
+
     return (
         <div className={styles.container}>
             <p className={styles.count}>{counter}</p>
-            {post.data.thumbnail !== "self" && post.data.thumbnail !== "spoiler" && <img className={styles.thumbnail} src={decodeUrl(post.data.thumbnail)}></img>}
+            {post.data.thumbnail && getThumbnail(post)}
             <div className={styles.infoContainer} onClick={(event) => commentClickHandler(post.data, event)}>
                 <p className={styles.title}>{post.data.title}</p> 
                 <p className={styles.info}>
