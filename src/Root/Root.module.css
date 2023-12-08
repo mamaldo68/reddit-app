@@ -10,3 +10,11 @@
 .accent {
     color: #ff6314;
 }
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    color: #5296dd;
+}

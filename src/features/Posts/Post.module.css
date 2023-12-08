@@ -10,6 +10,7 @@
     margin: 2rem 10% 2rem 10%;
     background-color: #222222;
     box-shadow: 10px 10px 5px black;
+    cursor: pointer;
 }
 
 .container:hover {
@@ -55,4 +56,13 @@
 .mod {
     background-color: green;
     border-radius: 5px;
+}
+
+.subreddit {
+    cursor: pointer;
+    color: #5296dd;
+}
+
+.subreddit:hover {
+    color: #ff6314;
 }

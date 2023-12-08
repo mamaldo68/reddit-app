@@ -5,13 +5,14 @@
 .button {
     background-color: #202020;
     color: #5296dd;
+    cursor: pointer;
 }
 
 .activeButton {
     color: #ff6314;
     border: "none";
     border-radius: 5px;
-    
+    cursor: default;
 }
 
 .r {
