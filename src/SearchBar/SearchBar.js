@@ -25,7 +25,7 @@ const SearchBar = () => {
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <input onChange={changeHandler} type="text" value={search}/>
+                <input onChange={changeHandler} type="text" value={search} placeholder="subreddit"/>
                 <button type="submit">Search</button>
             </form>
         </div>

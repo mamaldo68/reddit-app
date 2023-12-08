@@ -5,9 +5,13 @@ import Post from "./Post";
 
 const Posts = () => {
     const posts = useSelector(selectPosts);
+    let counter = 0;
     return (
         <div>
-            {posts && posts.map(post => <Post post={post}/>)}
+            {posts && posts.map(post => {
+                counter++
+                return <Post post={post} counter={counter}/>
+            })}
             {!posts && <p>can't find that subreddit</p>}
         </div>
     );

@@ -1,0 +1,12 @@
+.container {
+    background-color: #424141;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.accent {
+    color: #ff6314;
+}
