@@ -1,0 +1,53 @@
+.parentComment {
+    margin-left: 0;
+    border-left: none;
+    padding: 0;
+}
+
+.replyComment {
+    margin-left: 1.5625rem;
+    border-left: 1px solid #ccc;
+    padding: 0.3125rem;
+}
+
+.depthMod0 {
+    border-left: 1px solid #2bd3c4;
+}
+
+.depthMod1 {
+    border-left: 1px solid #ff5800;
+}
+
+.depthMod2 {
+    border-left: 1px solid #008bc2;
+}
+
+.depthMod3 {
+    border-left: 1px solid #ff9a0e;
+}
+
+.hidden {
+    display: none;
+}
+
+.hideButton {
+    color: gray;
+}
+
+.author {
+    margin-left: 0.5rem;
+}
+
+.score {
+    margin-left: 1rem;
+}
+
+.mod {
+    background-color: #109d58;
+    border-radius: 5px;
+}
+
+.op {
+    background-color: #008bc2;
+    border-radius: 5px;
+}
