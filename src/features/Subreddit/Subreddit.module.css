@@ -1,0 +1,23 @@
+.container {
+    text-align: center;
+}
+
+.button {
+    background-color: #202020;
+    color: #5296dd;
+}
+
+.activeButton {
+    color: #ff6314;
+    border: "none";
+    border-radius: 5px;
+    
+}
+
+.r {
+    color: #5296dd;
+}
+
+.subreddit {
+    color: #686868;
+}

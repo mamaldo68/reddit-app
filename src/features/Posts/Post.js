@@ -20,12 +20,12 @@ const Post = ({ post, counter }) => {
         <div className={styles.container}>
             <p className={styles.count}>{counter}</p>
             {post.data.thumbnail !== "self" && post.data.thumbnail !== "spoiler" && <img className={styles.thumbnail} src={decodeUrl(post.data.thumbnail)}></img>}
-            <div className={styles.infoContainer}>
+            <div className={styles.infoContainer} onClick={() => clickHandler(post.data)}>
                 <p className={styles.title}>{post.data.title}</p> 
                 <p className={styles.info}>
                     By: <span className={post.data.distinguished === "moderator" || post.data.author === "AutoModerator" ? styles.mod : ""}>{post.data.author}</span> to r/{post.data.subreddit}
                 </p>
-                <p className={styles.moreInfo}>score: {post.data.score} | <span onClick={() => clickHandler(post.data)}>comments: {post.data.num_comments}</span> | {date.toUTCString()}</p>
+                <p className={styles.moreInfo}>score: {post.data.score} | comments: {post.data.num_comments} | {date.toUTCString()}</p>
             </div> 
         </div>
     );
