@@ -18,6 +18,7 @@ const Post = ({ post, counter }) => {
         dispatch(loadComments(object.permalink));
         navigate(`${object.permalink}`);
         event.stopPropagation();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const subredditClickHandler = (object, event) => {
