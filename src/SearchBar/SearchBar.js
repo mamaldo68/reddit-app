@@ -3,6 +3,7 @@ import { loadPosts } from "../features/Posts/postsSlice";
 import { addSubreddit, selectSortType } from "../features/Subreddit/subredditSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styles from "./SearchBar.module.css";
 
 const SearchBar = () => {
     const [search, setSearch] = useState("");
@@ -23,10 +24,10 @@ const SearchBar = () => {
     };
 
     return (
-        <div>
+        <div className={styles.container}>
             <form onSubmit={submitHandler}>
-                <input onChange={changeHandler} type="text" value={search} placeholder="subreddit"/>
-                <button type="submit">Search</button>
+                <input className={styles.input} onChange={changeHandler} type="text" value={search} placeholder="subreddit"/>
+                <button className={styles.button} type="submit">Search</button>
             </form>
         </div>
     );

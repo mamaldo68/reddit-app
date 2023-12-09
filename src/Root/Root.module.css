@@ -18,3 +18,11 @@
 .clickable:hover {
     color: #5296dd;
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        font-size: 0.5rem;
+        width: 100%;
+        padding-right: 0;
+    }
+}

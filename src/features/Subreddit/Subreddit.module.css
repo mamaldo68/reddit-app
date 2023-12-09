@@ -22,3 +22,14 @@
 .subreddit {
     color: #686868;
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        font-size: 0.6rem;
+    }
+
+    .button {
+        height: 0.8rem;
+        font-size: 0.6rem;
+    }
+}

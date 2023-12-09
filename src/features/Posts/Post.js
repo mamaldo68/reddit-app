@@ -33,26 +33,26 @@ const Post = ({ post, counter }) => {
                 const getResolutions = object.data.preview.images[0].resolutions;
                 const getImg = getResolutions[0];
                 return (
-                    <div className={`${styles.thumbnail}`}>
-                        <img className={`${styles.thumbnail} ${styles.nsfw}`} src={decodeUrl(getImg.url)} width={getImg.width} height={getImg.height}/>
+                    <div className={`${styles.thumbnailContainer}`}>
+                        <img className={`${styles.nsfw} ${styles.thumbnail}`} src={decodeUrl(getImg.url)} width={getImg.width} height={getImg.height}/>
                     </div>
                 );
             case "spoiler":
                 return (
-                    <div className={`${styles.thumbnail}`}>
-                        <img className = {styles.otherThumbnails} src="/images/spoilerPost.png"/>
+                    <div className={`${styles.thumbnailContainer}`}>
+                        <img className = {`${styles.otherThumbnails} ${styles.thumbnail}`} src="/images/spoilerPost.png"/>
                     </div>
                 );
             case "self":
                 return (
-                    <div className={`${styles.thumbnail}`}>
-                        <img className = {styles.otherThumbnails} src="/images/textPost.png"/>
+                    <div className={`${styles.thumbnailContainer}`}>
+                        <img className = {`${styles.otherThumbnails} ${styles.thumbnail}`} src="/images/textPost.png"/>
                     </div>
                 );
             default:
                 return (
-                    <div className={`${styles.thumbnail}`}>
-                        <img src={decodeUrl(object.data.thumbnail)}/>
+                    <div  className={`${styles.thumbnailContainer}`}>
+                        <img className={styles.thumbnail} src={decodeUrl(object.data.thumbnail)}/>
                     </div>
                 );
         }
