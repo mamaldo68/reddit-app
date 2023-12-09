@@ -21,7 +21,7 @@ const GalleryDisplay = ({ mediaContent }) => {
                 <button className={styles.button} type="button" onClick={nextHandler}>{">"}</button>
             </div>
             <br/>
-            <img src={currentImg.src} width={currentImg.width} height={currentImg.height}/>
+            <img className={styles.img} src={currentImg.src} width={currentImg.width} height={currentImg.height}/>
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./VideoDisplay.module.css";
 
 const VideoDisplay = ({ mediaContent }) => {
 
@@ -8,7 +9,7 @@ const VideoDisplay = ({ mediaContent }) => {
 
     return (
         <div>
-            <video controls autoPlay width={mediaContent.width} height={mediaContent.height}>
+            <video controls autoPlay width={mediaContent.width} height={mediaContent.height}  className={styles.video}>
                 <source src={mediaContent.src}/>
                 Your browser does not support the video tag.
             </video>

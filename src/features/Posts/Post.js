@@ -30,13 +30,15 @@ const Post = ({ post, counter }) => {
     const getThumbnail = (object) => {
         switch(object.data.thumbnail) {
             case "nsfw":
-                const getResolutions = object.data.preview.images[0].resolutions;
-                const getImg = getResolutions[0];
-                return (
-                    <div className={`${styles.thumbnailContainer}`}>
-                        <img className={`${styles.nsfw} ${styles.thumbnail}`} src={decodeUrl(getImg.url)} width={getImg.width} height={getImg.height}/>
-                    </div>
-                );
+                if(object.data.preview) {
+                    const getResolutions = object.data.preview.images[0].resolutions;
+                    const getImg = getResolutions[0];
+                    return (
+                        <div className={`${styles.thumbnailContainer}`}>
+                            <img className={`${styles.nsfw} ${styles.thumbnail}`} src={decodeUrl(getImg.url)} width={getImg.width} height={getImg.height}/>
+                        </div>
+                    );
+                }  
             case "spoiler":
                 return (
                     <div className={`${styles.thumbnailContainer}`}>

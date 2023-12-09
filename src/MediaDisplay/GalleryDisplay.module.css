@@ -18,3 +18,28 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 767px) {
+    .img {
+        width: 100%;
+        height: auto;
+    }
+
+    .button {
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid #5296dd;
+        background: transparent;
+        font-size: 1rem;
+    }
+    
+    .button:hover {
+        border: 2px solid #ff6314;
+    }
+
+    .container {
+        position: relative;
+        top: 1rem;
+        align-items: center;
+    }
+}

@@ -40,7 +40,7 @@ const Comment = ({comment}) => {
     }
         
     return (
-        <div className={commentStyle}>
+        <div className={`${commentStyle} ${styles.commentSize}`}>
             <p>
                 <span className={styles.hideButton} onClick={hideComments}>[{isHidden ? "+" : "-"}]</span>
                 <span className={authorColor()}>{author}</span>

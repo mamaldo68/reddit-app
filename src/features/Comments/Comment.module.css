@@ -51,3 +51,20 @@
     background-color: #008bc2;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 767px) {
+    .commentSize {
+        font-size: 0.6rem;
+    }
+
+    .parentComment {
+        margin-left: 0;
+        border-left: none;
+        padding: 0;
+    }
+    
+    .replyComment {
+        margin-left: 1%;
+        padding: 0.3125rem;
+    }
+}
