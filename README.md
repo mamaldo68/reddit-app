@@ -19,7 +19,11 @@ A simple Reddit app to browse any subreddit and read comments.
 - JavaScript
 - CSS
 
-## How to run the program
+## View the app online
+
+https://maldo-redditlite.netlify.app
+
+## How to run the program locally
 
 In the project directory, you can run:
 
