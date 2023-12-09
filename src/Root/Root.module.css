@@ -26,3 +26,11 @@
         padding-right: 0;
     }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        font-size: 1rem;
+        width: 100%;
+        padding-right: 0;
+    } 
+}
