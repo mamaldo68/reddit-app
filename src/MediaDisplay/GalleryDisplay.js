@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./GalleryDisplay.module.css";
 
 const GalleryDisplay = ({ mediaContent }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,8 +15,12 @@ const GalleryDisplay = ({ mediaContent }) => {
     
     return (
         <div>
-            <button type="button" onClick={prevHandler}>Prev</button>
-            <button type="button" onClick={nextHandler}>Next</button>
+            <div className={styles.container}>
+                <button className={styles.button} type="button" onClick={prevHandler}>{"<"}</button>
+                <p>{currentIndex + 1} / {mediaContent.gallery_data.length}</p>
+                <button className={styles.button} type="button" onClick={nextHandler}>{">"}</button>
+            </div>
+            <br/>
             <img src={currentImg.src} width={currentImg.width} height={currentImg.height}/>
         </div>
     );

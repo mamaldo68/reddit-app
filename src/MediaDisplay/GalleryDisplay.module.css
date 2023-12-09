@@ -1,0 +1,20 @@
+.button {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid #5296dd;
+    border-radius: 50%;
+    color: #5296dd;
+    font-weight: bold;
+    background: transparent;
+    font-size: 2rem;
+}
+
+.button:hover {
+    border: 3px solid #ff6314;
+    color: #ff6314;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
